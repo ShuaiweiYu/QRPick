@@ -20,8 +20,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      Initializes menu bar interface and global hotkey monitoring
      */
     func applicationDidFinishLaunching(_ notification: Notification) {
+        requestAccessibilityPermissions()
         setupMenuBar()
         setupGlobalHotKey()
+    }
+    
+    /**
+     request the accessibility permission to listen to the global hot key
+     */
+    private func requestAccessibilityPermissions() {
+        let doNotShowAgain = UserDefaults.standard.bool(forKey: "doNotShowAccessibilityAlert")
+        if doNotShowAgain {
+            return
+        }
+
+        let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true] as CFDictionary
+        let isTrusted = AXIsProcessTrustedWithOptions(options)
+
+        if !isTrusted {
+            showAccessibilityAlert()
+        }
     }
 
     /**
@@ -39,9 +57,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: String(localized: "menu_scan_qr_code"), action: #selector(scanQRCode), keyEquivalent: ""))
+
+        let scanMenuItem = NSMenuItem(
+            title: String(localized: "menu_scan_qr_code"),
+            action: #selector(scanQRCode),
+            keyEquivalent: "R"
+        )
+        scanMenuItem.keyEquivalentModifierMask = [.command, .shift]
+
+        menu.addItem(scanMenuItem)
         menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: String(localized: "menu_quit"), action: #selector(quitApp), keyEquivalent: "q"))
+
+        let quitMenuItem = NSMenuItem(
+            title: String(localized: "menu_quit"),
+            action: #selector(quitApp),
+            keyEquivalent: "q"
+        )
+
+        menu.addItem(quitMenuItem)
 
         statusItem?.menu = menu
     }
@@ -67,6 +100,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 return nil
             }
             return event
+        }
+    }
+    
+    /**
+     Displays accessibility alert window
+     */
+    private func showAccessibilityAlert() {
+        let alert = NSAlert()
+        alert.messageText = String(localized: "accessibility_alert_title")
+        alert.informativeText = String(localized: "accessibility_alert_content")
+        alert.alertStyle = .warning
+
+        alert.addButton(withTitle: String(localized: "accessibility_alert_button_ok"))
+        alert.addButton(withTitle: String(localized: "accessibility_alert_button_open_setting"))
+
+        alert.showsSuppressionButton = true
+        alert.suppressionButton?.title = String(localized: "accessibility_alert_button_no_remind")
+
+        NSApp.activate(ignoringOtherApps: true)
+
+        let response = alert.runModal()
+
+        if let suppressionButton = alert.suppressionButton,
+           suppressionButton.state == .on
+        {
+            UserDefaults.standard.set(true, forKey: "doNotShowAccessibilityAlert")
+        }
+
+        switch response {
+        case .alertFirstButtonReturn:
+            break
+        case .alertSecondButtonReturn:
+            openAccessibilitySettings()
+        default:
+            break
+        }
+    }
+
+    private func openAccessibilitySettings() {
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+            NSWorkspace.shared.open(url)
         }
     }
 
