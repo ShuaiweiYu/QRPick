@@ -2,11 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shuaiweiyu.github.io/QRPick/releases</id>
     <title>QR Pick Blog</title>
-    <updated>2025-02-27T10:00:00.000Z</updated>
+    <updated>2026-02-07T10:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shuaiweiyu.github.io/QRPick/releases"/>
     <subtitle>QR Pick Blog</subtitle>
     <icon>https://shuaiweiyu.github.io/QRPick/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v1.2.0 — Rebranding & Quick Full Scan]]></title>
+        <id>https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0</id>
+        <link href="https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0"/>
+        <updated>2026-02-07T10:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This update officially introduces QR Pick to the world and brings the highly requested "Quick Full Scan" feature to your desktop.]]></summary>
+        <content type="html"><![CDATA[<p>This update officially introduces <strong>QR Pick</strong> to the world and brings the highly requested "Quick Full Scan" feature to your desktop.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-key-highlights">🚀 Key Highlights<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0#-key-highlights" class="hash-link" aria-label="Direct link to 🚀 Key Highlights" title="Direct link to 🚀 Key Highlights" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-hello-qr-pick">1. Hello, QR Pick!<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0#1-hello-qr-pick" class="hash-link" aria-label="Direct link to 1. Hello, QR Pick!" title="Direct link to 1. Hello, QR Pick!" translate="no">​</a></h4>
+<p>We’ve said goodbye to "MacQRScanner" and embraced a new identity: <strong>QR Pick</strong>. The name represents our goal—to let you "pick" information off your screen as easily as picking up a coin.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-quick-full-scan">2. Quick Full Scan<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0#2-quick-full-scan" class="hash-link" aria-label="Direct link to 2. Quick Full Scan" title="Direct link to 2. Quick Full Scan" translate="no">​</a></h4>
+<p>Tired of selecting areas? Now you can scan your entire screen with a single click.</p>
+<ul>
+<li class=""><strong>Auto-Detection</strong>: The app automatically crawls your current display to find any valid QR or Barcode.</li>
+<li class=""><strong>Smart Conflict Resolution</strong>: When multiple codes are found, QR Pick won't guess. It will ask you to use the "Area Scan" for precise targeting, preventing accidental link openings.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-improvements">🛠 Improvements<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0#-improvements" class="hash-link" aria-label="Direct link to 🛠 Improvements" title="Direct link to 🛠 Improvements" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Performance Boost</strong>: Optimized the temporary image processing logic, reducing scan latency by approximately 30%.</li>
+<li class=""><strong>Updated UI</strong>: All dialogs and menus have been updated with the new branding and refined iconography.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-download">📥 Download<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.2.0#-download" class="hash-link" aria-label="Direct link to 📥 Download" title="Direct link to 📥 Download" translate="no">​</a></h3>
+<p>Head over to the <a href="https://github.com/ShuaiweiYu/QRPick/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Releases</a> page to download the latest <code>QR-Pick-v1.2.0.zip</code>.</p>
+<blockquote>
+<p><strong>Note</strong>: Since the app is not Apple-certified, please right-click the app in Finder and select "Open" to bypass the initial security warning. Ensure "Screen Recording" permission is enabled in System Settings.</p>
+</blockquote>]]></content>
+        <author>
+            <name>Shuaiwei Yu</name>
+            <uri>https://github.com/ShuaiweiYu</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[v1.1.0 — Global Hotkeys & Rebranding]]></title>
         <id>https://shuaiweiyu.github.io/QRPick/releases/release-1.1.0</id>

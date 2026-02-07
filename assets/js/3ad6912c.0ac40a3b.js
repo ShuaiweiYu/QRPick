@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwebsite=globalThis.webpackChunkwebsite||[]).push([[430],{3347(e){e.exports=JSON.parse('{"metadata":{"permalink":"/QRPick/releases","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Hades Releases"}}')}}]);
