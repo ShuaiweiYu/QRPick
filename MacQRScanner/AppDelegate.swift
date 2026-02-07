@@ -63,9 +63,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             action: #selector(scanQRCode),
             keyEquivalent: "R"
         )
-        scanMenuItem.keyEquivalentModifierMask = [.command, .shift]
+        scanMenuItem.keyEquivalentModifierMask = [.command, .option]
+        
+        let fullScanItem = NSMenuItem(
+            title: String(localized: "menu_full_screen_scan"),
+            action: #selector(scanFullScreen),
+            keyEquivalent: "R"
+        )
+        fullScanItem.keyEquivalentModifierMask = [.command, .shift]
 
         menu.addItem(scanMenuItem)
+        menu.addItem(fullScanItem)
         menu.addItem(.separator())
 
         let quitMenuItem = NSMenuItem(
@@ -195,6 +203,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 5. Clean up temp file
         try? fileManager.removeItem(atPath: tempFilePath)
     }
+    
+    /**
+     Initiates a full-screen capture and automatic QR code detection process
+     
+     Workflow:
+     1. Captures the entire screen silently using `screencapture -x` CLI tool
+     2. Validates and processes the temporary screenshot file into an NSImage
+     3. Hands off the image to a multi-detection handler to manage multiple QR codes
+     4. Cleans up temporary files from the system storage
+     */
+    @objc func scanFullScreen() {
+        let fileManager = FileManager.default
+        let tempFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent("full_screenshot.png")
+
+        if fileManager.fileExists(atPath: tempFilePath) {
+            try? fileManager.removeItem(atPath: tempFilePath)
+        }
+
+        let task = Process()
+        task.launchPath = "/usr/sbin/screencapture"
+        task.arguments = ["-x", tempFilePath]
+
+        task.launch()
+        task.waitUntilExit()
+
+        guard fileManager.fileExists(atPath: tempFilePath),
+              let screenshotImage = NSImage(contentsOf: URL(fileURLWithPath: tempFilePath)) else {
+            return
+        }
+
+        processMultiDetection(in: screenshotImage)
+
+        try? fileManager.removeItem(atPath: tempFilePath)
+    }
 
     /**
      Performs QR code detection on captured image
@@ -237,6 +279,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             showAlert(result: String(localized: "alert_failure_recognition_details").appending(error.localizedDescription))
         }
+    }
+    
+    
+    private func processMultiDetection(in image: NSImage) {
+        guard let tiffData = image.tiffRepresentation,
+              let ciImage = CIImage(data: tiffData) else { return }
+
+        let request = VNDetectBarcodesRequest { [weak self] request, error in
+            guard let self = self, let results = request.results as? [VNBarcodeObservation] else { return }
+
+            DispatchQueue.main.async {
+                if results.isEmpty {
+                    self.showAlert(result: String(localized: "alert_warn_no_qr_code"))
+                } else if results.count == 1 {
+                    let qrText = results.first?.payloadStringValue ?? ""
+                    let qrType = self.parser.parseQRCodeType(qrText)
+                    self.showCustomSwiftUIWindow(result: qrText, qrCodeType: qrType)
+                } else {
+                    let multiAlert = NSAlert()
+                    multiAlert.messageText = String(localized: "multiple-qr-detected")
+                    multiAlert.informativeText = String(localized: "multiple-qr-detected-info")
+                    multiAlert.alertStyle = .informational
+                    multiAlert.addButton(withTitle: String(localized: "result_ok"))
+                    
+                    let response = multiAlert.runModal()
+                    if response == .alertSecondButtonReturn {
+                        self.scanQRCode()
+                    }
+                }
+            }
+        }
+
+        let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
+        try? handler.perform([request])
     }
     
     // MARK: - Customized Results Window

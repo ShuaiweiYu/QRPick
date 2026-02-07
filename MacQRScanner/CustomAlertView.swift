@@ -38,10 +38,10 @@ struct CustomAlertView: View {
             VStack(spacing: 8) {
                 switch qrCodeType {
                 case .email(let email, let subject, let body):
-                    EmailButtons(email: email, subject: subject, content: body)
+                    EmailButtons(email: email, subject: subject, content: body, onAction: onClose)
 
                 case .url(let url):
-                    URLButtons(url: url)
+                    URLButtons(url: url, onAction: onClose)
 
                 case .wifi(let ssid, let password):
                     WiFiButtons(ssid: ssid, password: password)
@@ -99,21 +99,25 @@ struct CustomAlertView: View {
         - content: Optional body content for the email
      */
     private struct EmailButtons: View {
-        let email: String
-        var subject: String?
-        var content: String?
+            let email: String
+            var subject: String?
+            var content: String?
+            let onAction: () -> Void
 
-        var body: some View {
-            VStack(spacing: 8) {
-                Button(action: { openMailClient(email: email, subject: subject, content: content) }) {
-                    Text(String(localized: "result_open_email"))
-                        .frame(maxWidth: .infinity)
+            var body: some View {
+                VStack(spacing: 8) {
+                    Button(action: {
+                        openMailClient(email: email, subject: subject, content: content)
+                        onAction()
+                    }) {
+                        Text(String(localized: "result_open_email"))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    CopyTextButton(content: email)
                 }
-                .buttonStyle(.borderedProminent)
-
-                CopyTextButton(content: email)
             }
-        }
 
         /**
          Opens system's default email client with pre-filled content
@@ -151,30 +155,28 @@ struct CustomAlertView: View {
         - url: The URL to handle
      */
     private struct URLButtons: View {
-        let url: URL
+            let url: URL
+            let onAction: () -> Void
 
-        var body: some View {
-            VStack(spacing: 8) {
-                Button(action: { openInBrowser(url) }) {
-                    Text(String(localized: "result_open_in_browser"))
-                        .frame(maxWidth: .infinity)
+            var body: some View {
+                VStack(spacing: 8) {
+                    Button(action: {
+                        openInBrowser(url)
+                        onAction() // 执行完打开后关闭窗口
+                    }) {
+                        Text(String(localized: "result_open_in_browser"))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    CopyTextButton(content: url.absoluteString)
                 }
-                .buttonStyle(.borderedProminent)
-
-                CopyTextButton(content: url.absoluteString)
+            }
+            
+            private func openInBrowser(_ url: URL) {
+                NSWorkspace.shared.open(url)
             }
         }
-        
-        /**
-         Opens the URL in the system's default browser
-         
-         - Parameters:
-            - url: The URL to open
-         */
-        private func openInBrowser(_ url: URL) {
-            NSWorkspace.shared.open(url)
-        }
-    }
 
     /**
      Creates action buttons for WiFi-type QR codes
