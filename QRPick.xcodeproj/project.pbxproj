@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0303E3372D47E1EC0049B76A /* MacQRScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacQRScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0303E3372D47E1EC0049B76A /* QRPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036FEBEF2D5ABD4500EEB6BB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +46,7 @@
 		0303E3382D47E1EC0049B76A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0303E3372D47E1EC0049B76A /* MacQRScanner.app */,
+				0303E3372D47E1EC0049B76A /* QRPick.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,9 +54,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0303E3362D47E1EC0049B76A /* MacQRScanner */ = {
+		0303E3362D47E1EC0049B76A /* QRPick */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0303E3482D47E1ED0049B76A /* Build configuration list for PBXNativeTarget "MacQRScanner" */;
+			buildConfigurationList = 0303E3482D47E1ED0049B76A /* Build configuration list for PBXNativeTarget "QRPick" */;
 			buildPhases = (
 				0303E3332D47E1EC0049B76A /* Sources */,
 				0303E3342D47E1EC0049B76A /* Frameworks */,
@@ -69,11 +69,11 @@
 			fileSystemSynchronizedGroups = (
 				0303E3392D47E1EC0049B76A /* MacQRScanner */,
 			);
-			name = MacQRScanner;
+			name = QRPick;
 			packageProductDependencies = (
 			);
 			productName = MacQRScanner;
-			productReference = 0303E3372D47E1EC0049B76A /* MacQRScanner.app */;
+			productReference = 0303E3372D47E1EC0049B76A /* QRPick.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -91,7 +91,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0303E3322D47E1EC0049B76A /* Build configuration list for PBXProject "MacQRScanner" */;
+			buildConfigurationList = 0303E3322D47E1EC0049B76A /* Build configuration list for PBXProject "QRPick" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -113,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0303E3362D47E1EC0049B76A /* MacQRScanner */,
+				0303E3362D47E1EC0049B76A /* QRPick */,
 			);
 		};
 /* End PBXProject section */
@@ -325,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0303E3322D47E1EC0049B76A /* Build configuration list for PBXProject "MacQRScanner" */ = {
+		0303E3322D47E1EC0049B76A /* Build configuration list for PBXProject "QRPick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0303E3462D47E1ED0049B76A /* Debug */,
@@ -334,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0303E3482D47E1ED0049B76A /* Build configuration list for PBXNativeTarget "MacQRScanner" */ = {
+		0303E3482D47E1ED0049B76A /* Build configuration list for PBXNativeTarget "QRPick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0303E3492D47E1ED0049B76A /* Debug */,

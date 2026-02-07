@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0303E3362D47E1EC0049B76A"
-               BuildableName = "MacQRScanner.app"
-               BlueprintName = "MacQRScanner"
-               ReferencedContainer = "container:MacQRScanner.xcodeproj">
+               BuildableName = "QRPick.app"
+               BlueprintName = "QRPick"
+               ReferencedContainer = "container:QRPick.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0303E3362D47E1EC0049B76A"
-            BuildableName = "MacQRScanner.app"
-            BlueprintName = "MacQRScanner"
-            ReferencedContainer = "container:MacQRScanner.xcodeproj">
+            BuildableName = "QRPick.app"
+            BlueprintName = "QRPick"
+            ReferencedContainer = "container:QRPick.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0303E3362D47E1EC0049B76A"
-            BuildableName = "MacQRScanner.app"
-            BlueprintName = "MacQRScanner"
-            ReferencedContainer = "container:MacQRScanner.xcodeproj">
+            BuildableName = "QRPick.app"
+            BlueprintName = "QRPick"
+            ReferencedContainer = "container:QRPick.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

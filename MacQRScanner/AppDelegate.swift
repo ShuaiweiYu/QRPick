@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             action: #selector(scanQRCode),
             keyEquivalent: "R"
         )
-        scanMenuItem.keyEquivalentModifierMask = [.command, .option]
+        scanMenuItem.keyEquivalentModifierMask = [.option, .shift]
         
         let fullScanItem = NSMenuItem(
             title: String(localized: "menu_full_screen_scan"),
@@ -72,8 +72,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
         fullScanItem.keyEquivalentModifierMask = [.command, .shift]
 
-        menu.addItem(scanMenuItem)
         menu.addItem(fullScanItem)
+        menu.addItem(scanMenuItem)
         menu.addItem(.separator())
 
         let quitMenuItem = NSMenuItem(
