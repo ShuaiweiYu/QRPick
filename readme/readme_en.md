@@ -1,4 +1,4 @@
-# 🚀 MacQRScanner - Minimalist & Efficient Desktop QR/Bar Code Scanner
+# 🚀 QRPick - Minimalist & Efficient Desktop QR/Bar Code Scanner
 
 ![Screenshot](demo.gif)
 
@@ -17,10 +17,10 @@
 
 ## 📥 Installation Guide
 
-1. Download latest version from [Releases page](https://github.com/ShuaiweiYu/MacQRscanner/releases)
+1. Download latest version from [Releases page](https://github.com/ShuaiweiYu/QRPick/releases)
 2. Drag app to "Applications" folder
     - **Since the app is not Apple Developer certified, manual trust required**:
-    - **System Settings** → **Privacy & Security** → **Allow apps from unidentified developers** → **Open MacQRScanner anyway**
+    - **System Settings** → **Privacy & Security** → **Allow apps from unidentified developers** → **Open QRPick anyway**
 3. Grant required permissions on first launch:
     - **Screen Recording Permission**: System Preferences → Security & Privacy → Privacy → Screen Recording
 
