@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://shuaiweiyu.github.io/QRPick/releases</id>
+    <title>QR Pick Blog</title>
+    <updated>2025-02-27T10:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://shuaiweiyu.github.io/QRPick/releases"/>
+    <subtitle>QR Pick Blog</subtitle>
+    <icon>https://shuaiweiyu.github.io/QRPick/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v1.1.0 — Global Hotkeys & Rebranding]]></title>
+        <id>https://shuaiweiyu.github.io/QRPick/releases/release-1.1.0</id>
+        <link href="https://shuaiweiyu.github.io/QRPick/releases/release-1.1.0"/>
+        <updated>2025-02-27T10:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are excited to introduce QR Pick (formerly MacQRScanner). This version focuses on speed and accessibility, making it easier than ever to capture data from your screen.]]></summary>
+        <content type="html"><![CDATA[<p>We are excited to introduce <strong>QR Pick</strong> (formerly MacQRScanner). This version focuses on speed and accessibility, making it easier than ever to capture data from your screen.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-new-features">🚀 New Features<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.1.0#-new-features" class="hash-link" aria-label="Direct link to 🚀 New Features" title="Direct link to 🚀 New Features" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Global Hotkey Support</strong>: You can now trigger the area scanner instantly from any application using <code>Command (⌘) + Shift + R</code>.</li>
+<li class=""><strong>The "QR Pick" Identity</strong>: We have officially rebranded! The new name reflects our goal: to let you "pick" information off your screen as easily as clicking a button.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-improvements--fixes">🛠 Improvements &amp; Fixes<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.1.0#-improvements--fixes" class="hash-link" aria-label="Direct link to 🛠 Improvements &amp; Fixes" title="Direct link to 🛠 Improvements &amp; Fixes" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Enhanced Vision Logic</strong>: Optimized the barcode detection request to reduce CPU overhead during scans.</li>
+<li class=""><strong>Smart Window Management</strong>: Result windows now automatically bring themselves to the front and close after performing primary actions (like opening a URL).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-download">📥 Download<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.1.0#-download" class="hash-link" aria-label="Direct link to 📥 Download" title="Direct link to 📥 Download" translate="no">​</a></h3>
+<p>Check the <a href="https://github.com/ShuaiweiYu/QRPick/releases" target="_blank" rel="noopener noreferrer" class="">GitHub Assets</a>.</p>]]></content>
+        <author>
+            <name>Shuaiwei Yu</name>
+            <uri>https://github.com/ShuaiweiYu</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.0.1 — UI Refinements]]></title>
+        <id>https://shuaiweiyu.github.io/QRPick/releases/release-1.0.1</id>
+        <link href="https://shuaiweiyu.github.io/QRPick/releases/release-1.0.1"/>
+        <updated>2025-02-21T10:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A small update to make the app look better.]]></summary>
+        <content type="html"><![CDATA[<p>A small update to make the app look better.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-bug-fixes">🐞 Bug Fixes<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.0.1#-bug-fixes" class="hash-link" aria-label="Direct link to 🐞 Bug Fixes" title="Direct link to 🐞 Bug Fixes" translate="no">​</a></h3>
+<ul>
+<li class="">Fixed an issue where column spacing in the WiFi result view was inconsistent.</li>
+<li class="">Corrected minor localization strings in the Chinese and English versions.</li>
+</ul>]]></content>
+        <author>
+            <name>Shuaiwei Yu</name>
+            <uri>https://github.com/ShuaiweiYu</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v1.0.0 — The Birth of QR Pick]]></title>
+        <id>https://shuaiweiyu.github.io/QRPick/releases/release-1.0.0</id>
+        <link href="https://shuaiweiyu.github.io/QRPick/releases/release-1.0.0"/>
+        <updated>2025-02-17T10:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are thrilled to announce the official launch of QR Pick (v1.0.0)! 🥳]]></summary>
+        <content type="html"><![CDATA[<p>We are thrilled to announce the official launch of <strong>QR Pick</strong> (v1.0.0)! 🥳</p>
+<p>QR Pick was born out of a simple need: a fast, lightweight, and privacy-respecting way to scan QR codes and barcodes directly from a Mac screen without having to reach for a smartphone.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-key-features-in-this-initial-release">🌟 Key Features in this Initial Release<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.0.0#-key-features-in-this-initial-release" class="hash-link" aria-label="Direct link to 🌟 Key Features in this Initial Release" title="Direct link to 🌟 Key Features in this Initial Release" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Precision Area Scanning</strong>: Use the native macOS selection tool to pick any QR/Bar code on your screen.</li>
+<li class=""><strong>Smart Data Parsing</strong>:<!-- -->
+<ul>
+<li class=""><strong>WiFi</strong>: Instantly extracts SSIDs and passwords.</li>
+<li class=""><strong>URLs</strong>: Recognizes web links for one-click browsing.</li>
+<li class=""><strong>Email</strong>: Parses <code>mailto</code> and <code>MATMSG</code> formats for quick communication.</li>
+<li class=""><strong>Text</strong>: Handles plain text for easy clipboard copying.</li>
+</ul>
+</li>
+<li class=""><strong>100% Local &amp; Private</strong>: No data ever leaves your machine. The app works entirely offline.</li>
+<li class=""><strong>Minimalist UI</strong>: A clean, SwiftUI-powered interface that stays out of your way until you need it.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-privacy-commitment">🛡 Privacy Commitment<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.0.0#-privacy-commitment" class="hash-link" aria-label="Direct link to 🛡 Privacy Commitment" title="Direct link to 🛡 Privacy Commitment" translate="no">​</a></h3>
+<p>From day one, QR Pick is designed to be a "Zero-Trust" utility. It requires Screen Recording permissions to "see" the codes, but it does not store images, record video, or connect to any remote servers. <strong>What you scan stays with you.</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-getting-started">📥 Getting Started<a href="https://shuaiweiyu.github.io/QRPick/releases/release-1.0.0#-getting-started" class="hash-link" aria-label="Direct link to 📥 Getting Started" title="Direct link to 📥 Getting Started" translate="no">​</a></h3>
+<ol>
+<li class="">Download the <code>QR-Pick-v1.0.0.zip</code> from the Assets below.</li>
+<li class="">Move it to your <code>/Applications</code> folder.</li>
+<li class="">Grant the necessary <strong>Screen Recording</strong> permissions in System Settings.</li>
+</ol>
+<hr>
+<p><em>Thank you for being part of our first release! If you find QR Pick useful, please consider starring the project on GitHub or sharing your feedback.</em></p>]]></content>
+        <author>
+            <name>Shuaiwei Yu</name>
+            <uri>https://github.com/ShuaiweiYu</uri>
+        </author>
+    </entry>
+</feed>
